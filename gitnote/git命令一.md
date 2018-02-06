@@ -1,4 +1,4 @@
-# git 命令笔记第一讲
+# git 笔记
 
 ## git基本命令
 - 建造一个文件夹：`mkdir` 
@@ -15,6 +15,7 @@
 - 返回到上一层目录：`cd ..`\ `cd ~`
 - 强制退出：`ctrl+c`
 - 当一页信息无法完全显示时：`j`,`k`上下翻页
+
 
 
 ### vim的简单操作
@@ -49,16 +50,58 @@
 1. 对于https的协议，每次推送都要输入github的用户名和密码，使用暂缓凭证可以不用每次都输入密码。  
   1.1 `git config --global credential.helper wincred`之后输入两次密码就可以不用每次输入密码了。
   
+## 协议
+**一、本地协议**  
+- 本地仓库之间的克隆：`git clone /c/wd/test.git` 远程链接的话：`git clone add origin /c/wd/test.git` 
+ 
+**二、http协议**  
+- 添加远程仓库的链接：`git remote add origin https://github.com/Xiaolincolin/test.git`     
+- 克隆远程仓库的链接：`git clone https://github.com/Xiaolincolin/test.git`
 
+**三、SSH协议**  
+1. 首先得获取密钥对，在命令行敲：`ssh-keygen -t rsa -C "email"`然后一直默认，敲回车，直到密钥生产，然后去生成的目录中敲：`ls -l -a`找到`.ssh`文件夹进去再查看隐藏的文件，找到带`pub`的共玥，`cat id_rsa.pub`,复制到github网址上创建新的ssh服务。
+2. 密钥生成以后就能使用ssh协议克隆和推送以及更新  
+  2.1 克隆：`git clone git@github.com:user.name/repository`  
+  2.2 添加ssh链接：`git remote add origin git@github.com:user.name/repository`
+ 
 ## 仓库
 - 初始化成仓库:`git init` 
-- 提交到缓存区：`git add .`(全部提交),`git add test`（只提交test）  
+- 提交到缓存区：`git add .`(全部提交), `git add test`（只提交test），`git add -p <file name>` 选择`s`进行分割，然后分割出来要提交的选择`y`,不提交的选择`n` 
 - 信息描述:`git commit -m "message"`（一行描述），`git commit -am\-a -m "message"`(当文件已经存在做修改时无需提交描述),`git commit`（格式化描述）  
-- 查看状态：`git status`\ `git status -sb`(简短)
-- 查看提交信息:`git log`\ `git log --oneline`(简短)
-- 查看某个人提交信息的内容时：`git show 哈希值（HEAD）`
+- 查看状态：`git status`\ `git status -sb`(让提示信息简短)
+- 查看提交信息:`git log`\ `git log --oneline`(简短),`git log --pretty=format: '%h %ad | %s%d [%an]' --graph --date=short`
+- 查看某个人提交信息的内容时：`git show 哈希值（HEAD）`,`git show HEAD~数字`数字几就是第几条
+- 查看某一类描述时用：`git log --grep docs(类型)`（git hi --grep docs）
 - 查看本地的仓库与github仓库的Url链接情况：`git remote -v`
 - 若没链接，创建链接（https协议）：`git remote add origin https://github,com/Xiaolincolin/“仓库名“`
 - 推送:`git push origin master`
 - 导入本地（更新）:`git pull origin master`
 - 克隆：`git clone url`
+- 查看git的全部子命令：`git help -a`
+- 查看指定某一个文件的修改历史：`git blame <file name>`,`git blame -L 10,20 <file name>`查看某个文件的修改历史，第二个是可以查看10到20行的修改历史。这个与`git log`的区别是log查看仓库下的历史。  
+- 清除未被跟踪的文件（就是没有git add的文件）:
+  1. 首先`git clean -n` 列出未被跟踪的文件   
+  2. 然后清除：`git clean -f`
+  3. 清除被忽略的文件：`git clean -x -f`
+### 查看信息的命令（提交状态）
+工作区与提交版本，工作区与暂存区，暂存区与提交区的查看命令图片：
+![][open]  
+由上面图片：  
+1. 工作目录和暂存区的区别：`git diff`
+2. 暂存区与提交的最后一个版本的差异：`git diff --cached`  
+3. 工作目录与提交最后一个版本差异：`git diff HEAD`
+4. 提交版本中两个之间的差异：`git diff <哈希值1> <哈希值2>`或者`git diff HEAD~4 HEAD~1`
+5. 查看工作区与提交区的某个版本的差异，可以在你想查看的版本中打个标签：`git tag <标签名> 哈希值（HEAD~数字）`，然后`git diff <标签名>`
+6. 暂存区与标签的差异：`git diff --cached <标签>`
+
+
+
+
+
+
+
+
+
+<!---  链接  -->    
+[open]:gitnote/1.png
+
