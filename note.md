@@ -111,7 +111,9 @@
 - 标签要单独推送：`git push url <tag name>`这是单个标签推送，如果要所有标签一起推送则：`git push url --tags` 
   - 当本地的标签删除后要同步到远程仓库，则：`git push url :refs/tags/<tag name>`
 
-
+## 分支
+### 创建分支
+![][branch]
 
 
 
@@ -120,4 +122,4 @@
 <!---  链接  -->    
 [open]:gitnote/1.png
 [resert]:gitnote/3.png
-
+[branch]:gitnote/branch1.png
