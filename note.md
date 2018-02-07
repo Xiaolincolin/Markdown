@@ -130,7 +130,10 @@
 - 修改分支名字：`git branch -m 旧名 新名`如果重名会提示，`git branch -M 旧名 新名`强制执行，
 - 删除分支：`git branch -d <file name>`未合并前提示不让删除，`git branch -D <file name>`强制删除。
 - 查看远程分支：`git branch -r`
-
+- 列出远程合并的分支：`git branch -r --merged`
+- 查看合并的分支：`git branch --merged`
+- 查看未合并的分支：`git branch --no-merged`
+- 取出远程`foo`分支:`git checkout -t origin/foo`
 
 
 ### 分支冲突解决
