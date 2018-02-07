@@ -114,6 +114,11 @@
 ## 分支
 ### 创建分支
 ![][branch]
+- 在当前提交历史上创建分支：`git branch <branch name>`,
+- 切换分支：`git checkout <branch name>`
+- 查看所有分支：`git branch`
+- 在当前分支下合并两个分支：`git merge <branch name>`
+- 删除分支：`git branch -d <branch name>`
 
 
 
