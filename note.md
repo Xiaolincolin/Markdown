@@ -123,10 +123,18 @@
 
 - 在当前提交历史上创建分支：`git branch <branch name>`,
 - 切换分支：`git checkout <branch name>`
-- 查看所有分支：`git branch`  
+- 查看所有分支：`git branch -v`
 - 在当前分支下合并两个分支：`git merge <branch name>`
 - 删除分支：`git branch -d <branch name>`
+- 创建分支并切换到分支上：`git checkout -b <branch name>`
+- 修改分支名字：`git branch -m 旧名 新名`如果重名会提示，`git branch -M 旧名 新名`强制执行，
+- 删除分支：`git branch -d <file name>`未合并前提示不让删除，`git branch -D <file name>`强制删除。
+- 查看远程分支：`git branch -r`
 
+
+
+### 分支冲突解决
+在不同分支上对同一个文件做修改时，在合并分支时会因为版本不同时会产生冲突，`git status`时会出现`UU<file name>`，解决冲突的方法是在主分支上`vim <file name>`对冲突的`>>>HEAD`,`===`,`<<< <branch name>`删除，并且修改内容成想要的样子。保存后提交，再`git commit`保存。
 
 
 
