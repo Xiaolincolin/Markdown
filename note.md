@@ -134,6 +134,11 @@
 ```
 - 将多条提交信息变成一条信息：`git rebase -i HEAD~数字`，里面如果是`s`则多条信息整合，如果用`r`则修改提交信息等等。
 ```
+### 标签
+```  
+- 在当前提交版本上打标签：`git tag <name>`,或者需要给标签备注信息时：`git tag <name> <哈希值或者版本值HEA~?> -m "message"`不加版本值默认最后一个版本。打上的标签可以当做哈希值用。查看标签用`git tag`,删除标签：`git tag -d <name>`
+- 标签要单独推送：`git push url <tag name>`这是单个标签推送，如果要所有标签一起推送则：`git push url --tags` 
+  - 当本地的标签删除后要同步到远程仓库，则：`git push url :refs/tags/<tag name>`
 
 
 
