@@ -113,21 +113,20 @@
 
 ## 分支
 ### 创建分支
-<<<<<<< HEAD
 ![][branch]  
 **在历史提交的最后一次上做一个iss53的分支**
 - 创建分支的命令是：`git branch iss53`
 - 切换分支：`git checkout <branch name>`
 - 查看所有分支：`git branch -v`
-=======
+
 ![][branch]
+
 - 在当前提交历史上创建分支：`git branch <branch name>`,
 - 切换分支：`git checkout <branch name>`
-- 查看所有分支：`git branch`
+- 查看所有分支：`git branch`  
 - 在当前分支下合并两个分支：`git merge <branch name>`
 - 删除分支：`git branch -d <branch name>`
 
->>>>>>> hotfix
 
 
 
