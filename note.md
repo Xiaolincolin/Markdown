@@ -1,6 +1,7 @@
-# git 笔记
+# git 笔记 （大牛整理的命令：[查看][url])
 
 ## git基本命令
+
 - 建造一个文件夹：`mkdir` 
 - 建造一个文件：`touch <file name>`
 - 进入指定文件夹 :`cd 文件夹`
@@ -68,6 +69,7 @@
 - 信息描述:`git commit -m "message"`（一行描述），`git commit -am\-a -m "message"`(当文件已经存在做修改时无需提交描述),`git commit`（格式化描述）  
 - 查看状态：`git status`\ `git status -sb`(让提示信息简短)
 - 查看提交信息:`git log`\ `git log --oneline`(简短),`git log --pretty=format: '%h %ad | %s%d [%an]' --graph --date=short`
+- 当一个问题进行不下去了，流产或者说重来一遍：`git rebase --abort`
 - 查看某个人提交信息的内容时：`git show 哈希值（HEAD）`,`git show HEAD~数字`数字几就是第几条
 - 查看某一类描述时用：`git log --grep docs(类型)`（git hi --grep docs）
 - 查看本地的仓库与github仓库的Url链接情况：`git remote -v`
@@ -153,6 +155,7 @@
 [open]:gitnote/1.png
 [resert]:gitnote/3.png
 [branch]:gitnote/branch1.png
+[url]:http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
 
 
 # git 团队协作
