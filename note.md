@@ -1,4 +1,6 @@
-# git 笔记 （大牛整理的命令：[查看][url])
+# git 笔记
+
+大牛整理的命令：[命令][url] [流程][ur2] [Forkng][ur4]  [清点][ur3]
 
 ## git基本命令
 
@@ -156,6 +158,7 @@
 [resert]:gitnote/3.png
 [branch]:gitnote/branch1.png
 [url]:http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
+[ur2]:http://www.ruanyifeng.com/blog/2015/12/git-workflow.html
+[ur4]:http://www.ruanyifeng.com/blog/2015/08/git-use-process.html
+[ur3]:http://www.ruanyifeng.com/blog/2015/09/git-bitmap.html
 
-
-# git 团队协作
