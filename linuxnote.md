@@ -141,6 +141,44 @@ info :命令参考手册，相对于man来说更加人性化一点，info common
 - ctrl+e 光标移动到行尾
 - ctrl+f 向前移动一个字符（forward），Alt+f 向前移动一个单词
 - ctrl+b 向后移动一个字符（backward），Alt+b 向后移动一个单词
+- ctrl+d 删除一个字符
+- ctrl+t 交换一个字符，alt+t 交换一个单词。
+- alt+l 将字符转换成小写，alt+u 将单词转换成大写。
+- ctrl+k 剪切光标后面的行，ctrl+u剪切光标前面的行
+— ctrl+y 粘贴
+- alt+d 剪切一个单词（光标前），alt+backspace剪切后面的单词
+- history 查找曾经使用过的命令，常用管道来组合使用，例如他：history | less
+history | grep 关键字 (之后用！前面的哈希值)
+  - ctrl+p 搜索上一条命令，一直按一直往上
+  - ctrl+n 搜索下一条命令。。。
+  - ctrl+r 查找命令
+
+### 权限
+权限分为：所有者（user），群组（group），其他人（other）
+- id 查看用户  
+- chmod修改文件的权限![][png]  
+修改命令：chmod <664> 文件名
+  - 也可以用`u,g,o,a`来代替所有者，群组或者其他人设置权限，用`+`来增加权限，`-`来去掉权限`=`设置成想要的权限，权限有`r`只读`w`写，`x`可执行。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--链接-->
+[png]:gitnote/ejz.png
 
 
 
