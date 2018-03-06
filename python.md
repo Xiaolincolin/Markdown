@@ -11,7 +11,7 @@ else :
 等价于：
 x = math.sqrt(x) if x >　0 else float('nan')
 ```
-###字典的遍历
+### 字典的遍历
 ```
 dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 只遍历键：
@@ -64,3 +64,25 @@ ndarry，N维数组对象，用法是直接用变量去点调用打印输出
 `np.arange(0,30,2)   0-30每隔两个数`  
 将一维数组变成多维数组  
 `n = n.reshape(3,5)` 将n变成三行五列  
+### 矩阵的遍历
+生成一个随机的矩阵
+`t = np.random.randint(0,10,(4,3))`生成一个随机4行3列矩阵  
+数组的行遍历：  
+```
+for row in t:
+	print(t)
+```
+取到下标的数组遍历：  
+```
+for i,row in enumerate(t):
+	print('row{}is{}'.format（i,row）)
+
+```
+### 数组的向量化
+把数组看成一个对象  
+例如对于一个数组`t1 =t2 * 2 `则把数组里面所有值乘2  
+使用`zip`对两个数组进行遍历计算  :
+```
+for i, j in zip(t, t1):
+	print('{}+{}={}'.format(i,j,i+j))
+```
