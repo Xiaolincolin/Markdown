@@ -53,7 +53,7 @@ dic_key = {x.upper(): x*3 for x in 'abcd'}
 ### 矩阵
 ndarry，N维数组对象，用法是直接用变量去点调用打印输出  
 `ndim`指的是维度的个数  
-`shape`是指各维度的大小  
+`shape`是打印或限定各维度的大小  
 `dtype`数据类型  
 例子
 `x.ndim,x.shape(输出行列...)，`
